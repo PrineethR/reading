@@ -8,7 +8,7 @@ When we experience art, especially <span class="hover-collage" data-images="http
 
 Design, however, is a tool. It must guide, it must inform, and it must resolve. A well-designed chair does not just sit there; it asks to be sat in. 
 
-![A beautiful exhibition](https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=1600&q=80)
+![a merging of mediation](images/art.jpg)
 
 But when design reaches its absolute pinnacle, it adopts the qualities of art. Try highlighting this sentence, or any sentence, to save it as a thought. It transcends utility and becomes something deeply personal to the user.
 

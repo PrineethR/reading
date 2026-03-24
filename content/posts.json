@@ -1,23 +1,23 @@
 [
     {
-        "id": "welcome",
-        "title": "A New Way to Read",
-        "summary": "Welcome to my new writing space. A place designed for long form thoughts, free from distractions.",
-        "date": "2026-03-24",
-        "readingTime": "2 min read"
-    },
-    {
-        "id": "design-philosophy",
-        "title": "On Subtlety in Design",
-        "summary": "Why the best web design feels like it's barely there, elevating the content rather than overshadowing it.",
-        "date": "2026-03-20",
-        "readingTime": "5 min read"
-    },
-    {
         "id": "on-art",
         "title": "On Art and Design (A Small Heresy)",
         "summary": "Art is the self made free. Design is the self made useful.",
         "date": "2026-03-20",
+        "readingTime": "1 min read"
+    },
+    {
+        "id": "on-what-design-actually-might-be",
+        "title": "On What Design Actually Might Be",
+        "summary": "Design is what happens when a human being refuses to accept the world as a fixed condition.",
+        "date": "2026-03-24",
+        "readingTime": "2 min read"
+    },
+    {
+        "id": "on-discipline",
+        "title": "On Discipline",
+        "summary": "Every discipline begins as a liberation and ends as a fence. A way of standing in the world with your eyes open and your assumptions loose.",
+        "date": "2026-03-24",
         "readingTime": "1 min read"
     }
 ]
