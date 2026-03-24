@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Writing</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div id="cursor-follower"></div>
+    <header class="site-header">
+        <a href="index.html" class="logo">W.</a>
+        <nav>
+            <a href="index.html">Index</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1 class="hero-title">Selected<br>Writings</h1>
+            <p class="hero-subtitle">Reflections, stories, and thoughts in long form.</p>
+        </section>
+
+        <section class="post-list" id="post-list">
+            <!-- Posts injected here dynamically -->
+            <div class="loading">Loading posts...</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 My Writing. Built for reading.</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

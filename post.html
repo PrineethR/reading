@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading...</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="reading-mode">
+    <div id="cursor-follower"></div>
+    <div id="text-toolbox" class="text-toolbox">
+        <button id="highlight-btn" class="toolbox-btn">Highlight</button>
+        <span class="toolbox-divider"></span>
+        <button id="remove-highlight-btn" class="toolbox-btn" style="display:none;">Remove</button>
+    </div>
+    <div class="progress-bar" id="progress-bar"></div>
+    
+    <header class="site-header reading-header">
+        <a href="index.html" class="logo back-link">← Back</a>
+        <div class="reading-controls">
+            <button id="theme-toggle" aria-label="Toggle dark mode">◐</button>
+        </div>
+    </header>
+
+    <article class="post-container">
+        <header class="post-header">
+            <div class="post-meta" id="post-meta"></div>
+            <h1 class="post-title" id="post-title">Loading...</h1>
+            <div class="post-summary" id="post-summary"></div>
+            <div class="divider"></div>
+        </header>
+
+        <div class="post-content" id="post-content">
+            <!-- Markdown content injected here -->
+        </div>
+    </article>
+
+    <footer class="site-footer">
+        <a class="footer-link" href="index.html">Read more writing</a>
+    </footer>
+
+    <script type="module" src="js/post.js?v=3"></script>
+</body>
+</html>
