@@ -17,12 +17,6 @@
 
 <body>
     <div id="cursor-follower"></div>
-    <header class="site-header">
-
-        <nav>
-            <a href="index.html">Index</a>
-        </nav>
-    </header>
 
     <main class="container">
         <section class="hero">
@@ -30,14 +24,25 @@
             <p class="hero-subtitle">Reflections, stories, and thoughts in lots of forms.</p>
         </section>
 
+        <div class="scribble-divider" id="scribble-divider">
+            <svg viewBox="0 0 600 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Flatter, slightly imperfect straight line -->
+                <path id="scribble-path" d="M0,10 Q100,8 200,12 T400,9 T600,11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+        </div>
+
         <section class="post-list" id="post-list">
             <!-- Posts injected here dynamically -->
-            <div class="loading">Loading posts...</div>
+            <div class="loading"></div>
         </section>
     </main>
 
     <footer class="site-footer">
         <p>&copy; 2026 opinions :(</p>
+        <nav class="footer-sitemap" style="margin-top: var(--spacing-md);">
+            <a href="https://prineethr.com" target="_blank" rel="noopener noreferrer"
+                class="portfolio-link">Portfolio</a>
+        </nav>
     </footer>
 
     <script type="module" src="js/main.js"></script>

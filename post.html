@@ -15,9 +15,15 @@
 <body class="reading-mode">
     <div id="cursor-follower"></div>
     <div id="text-toolbox" class="text-toolbox">
-        <button id="highlight-btn" class="toolbox-btn">Highlight</button>
+        <button id="bold-btn" class="toolbox-btn" title="Bold"><strong>B</strong></button>
+        <button id="italic-btn" class="toolbox-btn" title="Italic"><em>I</em></button>
+        <button id="strike-btn" class="toolbox-btn" title="Strikethrough"><s>S</s></button>
         <span class="toolbox-divider"></span>
-        <button id="remove-highlight-btn" class="toolbox-btn" style="display:none;">Remove</button>
+        <button id="textsize-btn" class="toolbox-btn" title="Increase text size">A+</button>
+        <button id="highlight-btn" class="toolbox-btn" title="Highlight">🖊️</button>
+        <button id="comment-btn" class="toolbox-btn" title="Add comment">💬</button>
+        <span class="toolbox-divider"></span>
+        <button id="remove-btn" class="toolbox-btn" title="Remove formatting" style="display:none;">✕</button>
     </div>
     <div class="progress-bar" id="progress-bar"></div>
     
