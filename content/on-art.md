@@ -1,15 +1,16 @@
 # On Art and Design (A Small Heresy)
 
-There is a long-standing debate about the boundaries between art and design. Are they the same thing? Do they serve the same purpose?
+Art is the self made free. Design is the self made useful.
 
 To me, the distinction is clear: **Art is the self made free. Design is the self made useful.**
 
-When we experience art, especially <span class="hover-collage" data-images="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=800&q=80,https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80,https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&q=80">the abstract forms</span>, we are not looking for a call to action. We are looking for an emotional resonance. We are looking for a mirror.
+When we experience art, especially , we are not looking for a call to action. We are looking for an emotional resonance. We are looking for a mirror.
 
-Design, however, is a tool. It must guide, it must inform, and it must resolve. A well-designed chair does not just sit there; it asks to be sat in. 
+A diary entry is complete when it is true. A <span class="hover-collage" data-images="images/typewriter1.jpg,images/typewriter2.jpg">letter</span> is complete when it arrives. Both are acts of writing, both can be honest, both can be beautiful - but one is finished on its own terms, and the other is finished on someone else's. Design is the letter. It was always going to be read by somebody who is not you.
+
+
+This is why design is harder to fake than it looks, and easier to fake than it should be. You can learn to write letters that look like they were meant for the person receiving them. The appearance and the reality are not always the same thing, and the gap between them is where most of contemporary design quietly lives.
 
 <img src="images/art.jpg" alt="a merging of mediation" style="width: 50%;">
 
-But when design reaches its absolute pinnacle, it adopts the qualities of art. Try highlighting this sentence, or any sentence, to save it as a thought. It transcends utility and becomes something deeply personal to the user.
-
-That is the heresy. That design, at its best, isn't just invisible. It is profoundly, undeniably visible, but only exactly when you need it to be.
+Art can be selfish and still be great. Design probably cannot.
