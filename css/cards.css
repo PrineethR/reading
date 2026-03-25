@@ -1,0 +1,343 @@
+/* =============================================
+   OBLIQUE METHOD CARDS — Interactive Deck Styles
+   Organic shapes, masonry rhythm, noisy gradients
+   ============================================= */
+
+/* Page intro */
+.cards-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.cards-intro {
+    max-width: var(--container-width);
+    margin: 0 auto var(--spacing-md);
+    text-align: left;
+}
+
+.cards-intro h1 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.1;
+    margin-top: 0;
+}
+
+.cards-intro .intro-subtitle {
+    font-family: var(--font-body);
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.cards-intro .intro-instructions {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0;
+}
+
+/* Controls bar */
+.cards-controls {
+    max-width: var(--container-width);
+    margin: 0 auto var(--spacing-xl);
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+#random-card-btn {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 100px;
+    background: #111;
+    color: #FAF9F6;
+    cursor: pointer;
+    transition: all 0.3s var(--ease);
+}
+
+#random-card-btn:hover {
+    background: #000;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+}
+
+/* =============================================
+   Card Grid — Organic, varied, spread layout
+   ============================================= */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    padding-bottom: var(--spacing-xl);
+}
+
+/* Individual Card wrapper */
+.method-card {
+    perspective: 1200px;
+    min-height: 240px;
+    cursor: pointer;
+    opacity: 0;
+    filter: blur(8px);
+    transition: transform 0.4s var(--ease);
+}
+
+
+
+.method-card.hidden {
+    display: none;
+}
+
+/* The card inner wrapper that flips */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.method-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Shared face styles */
+.card-front,
+.card-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* default round shape — overridden by shape variants */
+    border-radius: 24px;
+}
+
+/* Front face */
+.card-front {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+
+.method-card:hover .card-front {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    border-color: rgba(128, 128, 128, 0.25);
+    background: linear-gradient(135deg, rgba(140, 140, 140, 0.15) 0%, rgba(140, 140, 140, 0.05) 60%, var(--bg-color) 100%) !important;
+}
+
+/* Noise texture overlay */
+.card-front::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--noise-texture);
+    background-repeat: repeat;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+/* Card title on front — the main focus */
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--text-primary);
+    margin: 0;
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+}
+
+
+
+/* Back face */
+.card-back {
+    background: var(--text-primary);
+    color: var(--bg-color);
+    transform: rotateY(180deg);
+    justify-content: center;
+    border: none;
+}
+
+.card-back-content {
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    line-height: 1.75;
+    overflow-y: auto;
+}
+
+
+/* =============================================
+   Random card spotlight overlay
+   ============================================= */
+.spotlight-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 28px;
+    cursor: pointer;
+}
+
+.spotlight-card {
+    perspective: 1200px;
+    width: 360px;
+    height: 420px;
+    cursor: pointer;
+}
+
+.spotlight-card .card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.spotlight-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.spotlight-card .card-front,
+.spotlight-card .card-back {
+    padding: 40px 34px;
+}
+
+.spotlight-card .card-front {
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+
+.spotlight-card .card-title {
+    font-size: 1.5rem;
+    color: #FAF9F6;
+}
+
+.spotlight-card .card-back {
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+.spotlight-card .card-back-content {
+    font-size: 1.05rem;
+    color: #FAF9F6;
+}
+
+.spotlight-dismiss {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* =============================================
+   RESPONSIVE — Mobile first
+   ============================================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .method-card {
+        min-height: 220px;
+    }
+
+    .cards-page {
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .method-card {
+        min-height: 200px;
+    }
+
+    .card-front,
+    .card-back {
+        padding: 24px 22px;
+    }
+
+    .card-title {
+        font-size: 1.05rem;
+    }
+
+    .cards-intro h1 {
+        font-size: 1.9rem;
+    }
+
+    .cards-intro .intro-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .spotlight-card {
+        width: 85vw;
+        max-width: 340px;
+        height: 380px;
+    }
+
+    .spotlight-card .card-front,
+    .spotlight-card .card-back {
+        padding: 30px 24px;
+    }
+
+    .spotlight-card .card-title {
+        font-size: 1.25rem;
+    }
+
+
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+    .cards-page {
+        padding: 0 12px;
+    }
+
+    .cards-grid {
+        gap: 12px;
+    }
+
+    .method-card {
+        min-height: 180px;
+    }
+
+    .card-front,
+    .card-back {
+        padding: 20px 18px;
+    }
+
+    .card-title {
+        font-size: 0.95rem;
+    }
+}

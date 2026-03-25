@@ -39,7 +39,7 @@ async function loadPosts() {
         
         posts.forEach((post, i) => {
             const article = document.createElement('a');
-            article.href = `post.html?id=${post.id}`;
+            article.href = post.url || `post.html?id=${post.id}`;
             article.className = 'post-item';
             
             // Format date

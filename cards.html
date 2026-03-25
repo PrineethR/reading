@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Card</title>
+    <meta name="description"
+        content="40 interactive method cards for a comb-shaped design practice, inspired by Brian Eno's Oblique Strategies.">
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+    <div id="cursor-follower"></div>
+
+    <header class="site-header reading-header" style="max-width: 1100px;">
+        <a href="index.html" class="logo back-link">Back</a>
+        <div class="reading-controls">
+            <button id="theme-toggle" aria-label="Toggle dark mode">◐</button>
+        </div>
+    </header>
+
+    <main class="cards-page">
+        <section class="cards-intro">
+            <h1>Method Cards</h1>
+            <p class="intro-subtitle">
+            </p>
+            <p class="intro-instructions">
+                Treat it as a constraint, not a suggestion.
+            </p>
+        </section>
+
+        <div class="cards-controls">
+            <button id="random-card-btn">Draw a Random Card</button>
+        </div>
+
+        <div class="cards-grid" id="cards-grid">
+            <!-- Cards injected by JS -->
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <a class="footer-link" href="index.html">Read more writing</a>
+    </footer>
+
+    <script src="js/cards.js"></script>
+</body>
+
+</html>

@@ -65,7 +65,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Prevent flash before GSAP animation */
-.hero-title, .hero-subtitle, .site-header, .site-footer, .post-header, .post-content {
+.hero-title, .hero-subtitle, .site-header, .site-footer, .post-header, .post-content,
+.cards-intro, .cards-controls {
     opacity: 0;
     filter: blur(12px);
 }
