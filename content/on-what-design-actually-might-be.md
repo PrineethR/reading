@@ -1,5 +1,3 @@
-# On What Design Actually Might Be
-
 Design is what happens when a human being refuses to accept the world as a fixed condition.
 It is not the "act" of empathy, not entirely, and it is not art, not entirely.
 It is something closer to a posture; one that holds both of those things and more, without collapsing into either. It is the practice of noticing: what is broken, what is missing, what is present but misaligned with the people it is supposed to serve. And then the practice of making - not as a separate act, but as the same act, continued.

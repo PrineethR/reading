@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Method Card</title>
+    <title>Method Cards</title>
     <meta name="description"
-        content="40 interactive method cards for a comb-shaped design practice, inspired by Brian Eno's Oblique Strategies.">
+        content="A deck of oblique-style method cards for designers, writers, and makers — and one personal set for Prineeth.">
     <!-- Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap"
@@ -38,6 +38,10 @@
         </section>
 
         <div class="cards-controls">
+            <div class="deck-toggle" role="group" aria-label="Select card deck">
+                <button class="deck-btn" data-deck="generic" id="deck-btn-generic">For Everyone</button>
+                <button class="deck-btn" data-deck="personal" id="deck-btn-personal">For Me</button>
+            </div>
             <button id="random-card-btn">Draw a Random Card</button>
         </div>
 

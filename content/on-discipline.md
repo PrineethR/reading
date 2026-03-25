@@ -1,5 +1,3 @@
-# On Discipline
-
 Every discipline begins as a liberation and ends as a fence.
 
 This is not a criticism. I feel that it is simply what happens when a way of seeing becomes a syllabus. UX design was, once, a radical insistence: that the person using the thing matters as much as the thing itself. Somewhere between that insight and the LinkedIn certification, it became a checklist. Psychology, sure. But not film. Not philosophy. Not the way that a footpath negotiates itself into existence across decades of bodies and monsoons and ambition.

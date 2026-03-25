@@ -71,6 +71,44 @@
     transform: translateY(-1px);
 }
 
+/* Deck toggle pill */
+.deck-toggle {
+    display: flex;
+    gap: 0;
+    border: 1.5px solid var(--border-color);
+    border-radius: 100px;
+    overflow: hidden;
+    background: transparent;
+}
+
+.deck-btn {
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 11px 24px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: background 0.25s var(--ease), color 0.25s var(--ease);
+    white-space: nowrap;
+}
+
+.deck-btn:first-child {
+    border-right: 1.5px solid var(--border-color);
+}
+
+.deck-btn:hover {
+    background: rgba(128, 128, 128, 0.08);
+    color: var(--text-primary);
+}
+
+.deck-btn--active {
+    background: var(--text-primary) !important;
+    color: var(--bg-color) !important;
+}
+
 /* =============================================
    Card Grid — Organic, varied, spread layout
    ============================================= */

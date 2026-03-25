@@ -5,24 +5,27 @@
 
 const CATEGORIES = [
     { id: 'orientation', color: '#D4AF37' },
-    { id: 'practice', color: '#2D8C8C' },
-    { id: 'writing', color: '#7B68AE' },
-    { id: 'play', color: '#E07A5F' },
-    { id: 'career', color: '#3D6098' },
-    { id: 'ai', color: '#4CAF7D' },
-    { id: 'reflection', color: '#C47D8E' },
+    { id: 'practice',    color: '#2D8C8C' },
+    { id: 'writing',     color: '#7B68AE' },
+    { id: 'play',        color: '#E07A5F' },
+    { id: 'career',      color: '#3D6098' },
+    { id: 'ai',          color: '#4CAF7D' },
+    { id: 'reflection',  color: '#C47D8E' },
 ];
 function getCat(id) { return CATEGORIES.find(c => c.id === id); }
 
+// =============================================
+// DECK A — Personal (for me)
+// =============================================
 const CARDS = [
     { cat: 'orientation', title: 'Name the obsession, not the job.', desc: 'Write one sentence that starts with "I can\'t stop thinking about…" and let that guide the project, not your role title.' },
-    { cat: 'orientation', title: 'Make the meta question local.', desc: 'Take your broad question about humans, play, or perception and apply it to one tiny scene — a bedroom corner, a single interaction, a single toy rule.' },
-    { cat: 'orientation', title: 'Draw the comb.', desc: 'Map your skills as a comb: list each deep spike (CMF, ergonomics, play, writing, AI, strategy) and write one line on how it changes the others.' },
+    { cat: 'orientation', title: 'Make the meta question local.', desc: 'Take your broad question about an interest and apply it to one tiny scene' },
+    { cat: 'orientation', title: 'Draw the comb.', desc: 'Map your skills as a comb: list each deep spike and write one line on how it changes the others.' },
     { cat: 'orientation', title: 'Choose today\'s spike.', desc: 'For this piece of work, pick one spike on your comb to be primary and let the others support it instead of competing with it.' },
     { cat: 'orientation', title: 'State your design claim.', desc: 'Write a single, arguable sentence that begins with "Design is most powerful when…" and test all your decisions against it for this project.' },
     { cat: 'orientation', title: 'Refuse retro comfort.', desc: 'When you notice you are copying a known style, ask: "What would make this impossible to have existed 10 years ago?" and push toward that.' },
     { cat: 'orientation', title: 'Design for one nervous system.', desc: 'Imagine a single, specific person\'s body and mind; optimize the experience for them first before generalizing.' },
-    { cat: 'practice', title: 'One deep year.', desc: 'Pick one theme (e.g., "playful ergonomics" or "text‑driven interfaces") and make it the secret focus of a full year of small experiments.' },
+    { cat: 'practice', title: 'One deep year.', desc: 'Pick one theme (e.g., "speculative futures") and make it the secret focus of a full year of small experiments.' },
     { cat: 'practice', title: 'Document before you move on.', desc: 'Before you allow yourself to start a new rabbit hole, produce one page that captures what you learned from the last one.' },
     { cat: 'practice', title: 'Ship one synthesis, not ten studies.', desc: 'Combine three of your past explorations into a single, finished artifact instead of starting a fresh exploration.' },
     { cat: 'practice', title: 'Decide the constraint first.', desc: 'Like Eno, set a non‑negotiable limitation (time, materials, colors, behaviors) before you design; design inside the box on purpose.' },
@@ -57,7 +60,56 @@ const CARDS = [
     { cat: 'reflection', title: 'Rename your practice.', desc: 'For one day, stop calling yourself by your job title. Give your practice a temporary name that reflects what you are actually doing.' },
 ];
 
+// =============================================
+// DECK B — Generic (for everyone)
+// =============================================
+const CARDS_GENERIC = [
+    { cat: 'orientation', title: 'Ask who it is actually for.', desc: 'Not your client. Not the brief. Name one specific human and design for their nervous system first.' },
+    { cat: 'orientation', title: 'State your position before touching tools.', desc: 'One sentence: what do you believe this work should do in the world? If you can\'t write it, you\'re not ready to start.' },
+    { cat: 'orientation', title: 'Make the invisible the subject.', desc: 'Design the pause, the transition, the edge, the decision — not the obvious central thing.' },
+    { cat: 'orientation', title: 'Remove one assumption from the brief.', desc: 'Find the one thing everyone is taking for granted and question it. Build from there.' },
+    { cat: 'orientation', title: 'Begin at the end.', desc: 'Describe the experience after someone has used your thing for a year. Then work backward.' },
+    { cat: 'practice', title: 'Swap the medium.', desc: 'If you\'re sketching, write. If you\'re writing, build. If you\'re building, draw. The discomfort is the point.' },
+    { cat: 'practice', title: 'Introduce a constraint you didn\'t choose.', desc: 'Randomize one limitation (time, material, color, cost, scale) and refuse to remove it until you\'re done.' },
+    { cat: 'practice', title: 'Work at the wrong scale.', desc: 'Make the big thing tiny. Make the small thing enormous. See what that reveals.' },
+    { cat: 'practice', title: 'Design until you\'re bored, then design once more.', desc: 'The piece after boredom is usually the real one.' },
+    { cat: 'practice', title: 'Use less. Then less again.', desc: 'Remove every element that is not doing precise work. Keep removing until the next removal would break the idea.' },
+    { cat: 'practice', title: 'Find the biological precedent.', desc: 'Before any formal decision, ask: does nature already solve this? How?' },
+    { cat: 'practice', title: 'Let manufacturing decide.', desc: 'Redesign around the hardest production constraint until the constraint becomes the aesthetic.' },
+    { cat: 'practice', title: 'Design for one sense, then add one more.', desc: 'Start with a single sensory channel. Add a second only when the first is complete.' },
+    { cat: 'reflection', title: 'Ask what would be lost.', desc: 'If your design disappeared, what human experience would deteriorate? If nothing, redesign.' },
+    { cat: 'reflection', title: 'Make it democratic or make it nothing.', desc: 'If only wealthy or privileged people can access it, ask whether it earns that exclusion.' },
+    { cat: 'orientation', title: 'Design the behavior, not the object.', desc: 'What do you want people to do, feel, or become? Start there. The object is a consequence.' },
+    { cat: 'reflection', title: 'Find the ethical spine.', desc: 'Every design decision is a value judgment. Name yours explicitly and test your work against it.' },
+    { cat: 'practice', title: 'Abandon the comfortable reference.', desc: 'a.k.a. fuck your Pinterest board. The first three things you thought of are someone else\'s solution. Discard them.' },
+    { cat: 'play', title: 'Change one element arbitrarily.', desc: 'Color, material, sequence, user, context — pick one and make it the opposite. Follow the consequences.' },
+    { cat: 'play', title: 'Do the version you think is wrong.', desc: 'Make the ugly one, the naive one, the too-simple one. Often the "wrong" path unlocks the right direction.' },
+    { cat: 'play', title: 'Ask what this would look like as play.', desc: 'How would a child encounter this? What rules, surprises, or rewards would make it a game?' },
+    { cat: 'play', title: 'Give the problem to the material.', desc: 'Stop deciding in your head. Make something physical or textual immediately and let the object argue back.' },
+    { cat: 'play', title: 'Find the version from another century.', desc: 'How would this problem have been solved 100 years ago? 500? The distance reveals your assumptions.' },
+    { cat: 'writing', title: 'If you can\'t say it, it isn\'t finished.', desc: 'Every design should be explainable in two sentences. Not simple — clear.' },
+    { cat: 'writing', title: 'Title it before you finish it.', desc: 'A sharp title disciplines the work. If you can\'t name it, it doesn\'t have a spine yet.' },
+    { cat: 'writing', title: 'Publish the ugly draft.', desc: 'Share something unfinished. The discomfort of being seen before readiness is how thinking accelerates.' },
+    { cat: 'writing', title: 'Let someone misunderstand it.', desc: 'Present your work without explanation. What they see is what it communicates. Work with that gap.' },
+    { cat: 'writing', title: 'Write the argument, not the description.', desc: 'Don\'t explain what the design looks like. Argue why it had to be this way.' },
+    { cat: 'ai', title: 'Design the feeling before the feature.', desc: 'Write how the interaction should feel to a human. Then and only then decide what the system does.' },
+    { cat: 'ai', title: 'Ban one convenience.', desc: 'Remove one standard technological shortcut from your process and see what has to be invented instead.' },
+    { cat: 'ai', title: 'Make it fragile on purpose.', desc: 'Build a version that is deliberately low-tech, handmade, or breakable. What does that teach you?' },
+    { cat: 'ai', title: 'Design as if the technology will change.', desc: 'Assume the platform, material, or medium shifts entirely in 5 years. What of your idea survives?' },
+    { cat: 'career', title: 'Keep one project that belongs to no one.', desc: 'Always have an experiment with no client, no timeline, no deliverable. Protect it.' },
+    { cat: 'career', title: 'Measure in arcs, not months.', desc: 'Judge growth over three-year periods. Single projects are data points, not verdicts.' },
+    { cat: 'career', title: 'Teach something you half-know.', desc: 'You understand something deeply only when you\'ve tried to explain it to a stranger. Do this regularly.' },
+    { cat: 'career', title: 'Collect questions, not answers.', desc: 'Maintain a live list of questions your practice cannot yet answer. Return to it when you feel directionless.' },
+    { cat: 'career', title: 'When in doubt, do the democratic version.', desc: 'Between two paths, take the one that reaches more people, enables more agency, or costs less exclusion.' },
+    { cat: 'reflection', title: 'Finish it.', desc: 'Incomplete work teaches less than flawed finished work. Done, even badly, beats archived and perfect.' },
+];
 
+// Active deck: 'personal' | 'generic'
+let activeDeck = 'generic';
+
+function getActiveDeck() {
+    return activeDeck === 'personal' ? CARDS : CARDS_GENERIC;
+}
 
 // =============================================
 // Seeded random for deterministic shape assignment
@@ -79,11 +131,10 @@ function createNoiseTexture() {
     const img = ctx.createImageData(size, size);
     for (let i = 0; i < img.data.length; i += 4) {
         const v = Math.random() * 255;
-        // black and white noise
         img.data[i] = v;
         img.data[i + 1] = v;
         img.data[i + 2] = v;
-        img.data[i + 3] = 25; // low opacity
+        img.data[i + 3] = 25;
     }
     ctx.putImageData(img, 0, 0);
     return canvas.toDataURL('image/png');
@@ -131,21 +182,20 @@ if (cursor) {
 // =============================================
 // Build the card grid
 // =============================================
-function buildCards() {
+function buildCards(deck) {
     const grid = document.getElementById('cards-grid');
+    grid.innerHTML = '';
 
-    // Generate noise texture and set it as a CSS variable
     const noiseUrl = createNoiseTexture();
     document.documentElement.style.setProperty('--noise-texture', `url(${noiseUrl})`);
 
-    CARDS.forEach((card, i) => {
+    deck.forEach((card, i) => {
         const cat = getCat(card.cat);
 
         const el = document.createElement('div');
         el.className = 'method-card';
         el.setAttribute('data-category', card.cat);
 
-        // Gradient direction varies per card for visual interest
         const angle = 120 + srand(i * 61 + 3) * 60;
 
         el.innerHTML = `
@@ -166,16 +216,69 @@ function buildCards() {
 
         grid.appendChild(el);
     });
+}
 
-    // Random card button
-    document.getElementById('random-card-btn').addEventListener('click', drawRandomCard);
+// =============================================
+// Animate cards in after a rebuild
+// =============================================
+function animateCards() {
+    const cards = document.querySelectorAll('.method-card');
+    cards.forEach((card, i) => {
+        gsap.fromTo(card,
+            { opacity: 0, filter: 'blur(8px)' },
+            {
+                opacity: 1, filter: 'blur(0px)',
+                duration: 0.4 + srand(i * 7) * 0.3,
+                ease: 'power2.out',
+                delay: i * 0.025 + srand(i * 11) * 0.06
+            }
+        );
+    });
+
+    if (cursor) {
+        document.querySelectorAll('a, button, .method-card').forEach(el => {
+            el.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 1.5, backgroundColor: 'rgba(212,175,55,0.2)', duration: 0.2 }));
+            el.addEventListener('mouseleave', () => gsap.to(cursor, { scale: 1, backgroundColor: 'transparent', duration: 0.2 }));
+        });
+    }
+}
+
+// =============================================
+// Deck toggle
+// =============================================
+function initDeckToggle() {
+    const btns = document.querySelectorAll('[data-deck]');
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-deck');
+            if (target === activeDeck) return;
+            activeDeck = target;
+
+            // update active state
+            btns.forEach(b => b.classList.toggle('deck-btn--active', b.getAttribute('data-deck') === activeDeck));
+
+            // swap out card grid
+            gsap.to('#cards-grid', {
+                opacity: 0, filter: 'blur(8px)', duration: 0.25, ease: 'power2.inOut',
+                onComplete: () => {
+                    buildCards(getActiveDeck());
+                    gsap.to('#cards-grid', { opacity: 1, filter: 'blur(0px)', duration: 0.25, ease: 'power2.out' });
+                    animateCards();
+                }
+            });
+        });
+    });
+
+    // set initial active visual
+    btns.forEach(b => b.classList.toggle('deck-btn--active', b.getAttribute('data-deck') === activeDeck));
 }
 
 // =============================================
 // Random card spotlight
 // =============================================
 function drawRandomCard() {
-    const card = CARDS[Math.floor(Math.random() * CARDS.length)];
+    const deck = getActiveDeck();
+    const card = deck[Math.floor(Math.random() * deck.length)];
     const cat = getCat(card.cat);
     const angle = 130 + Math.random() * 40;
 
@@ -220,27 +323,11 @@ function drawRandomCard() {
 // GSAP entrance animations
 // =============================================
 function animateEntrance() {
-    gsap.to('.site-header', { filter: 'blur(0px)', opacity: 1, duration: 1.5, ease: 'power2.out' });
-    gsap.to('.cards-intro', { filter: 'blur(0px)', opacity: 1, duration: 1.5, ease: 'power2.out', delay: 0.15 });
-    gsap.to('.cards-controls', { filter: 'blur(0px)', opacity: 1, duration: 1, ease: 'power2.out', delay: 0.3 });
-    gsap.to('.site-footer', { filter: 'blur(0px)', opacity: 1, duration: 1.5, ease: 'power2.out', delay: 0.4 });
-
-    const cards = document.querySelectorAll('.method-card');
-    cards.forEach((card, i) => {
-        gsap.to(card, {
-            opacity: 1, filter: 'blur(0px)',
-            duration: 0.4 + srand(i * 7) * 0.3,
-            ease: 'power2.out',
-            delay: 0.5 + i * 0.03 + srand(i * 11) * 0.08
-        });
-    });
-
-    if (cursor) {
-        document.querySelectorAll('a, button, .method-card').forEach(el => {
-            el.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 1.5, backgroundColor: 'rgba(212,175,55,0.2)', duration: 0.2 }));
-            el.addEventListener('mouseleave', () => gsap.to(cursor, { scale: 1, backgroundColor: 'transparent', duration: 0.2 }));
-        });
-    }
+    gsap.to('.site-header',   { filter: 'blur(0px)', opacity: 1, duration: 1.5, ease: 'power2.out' });
+    gsap.to('.cards-intro',   { filter: 'blur(0px)', opacity: 1, duration: 1.5, ease: 'power2.out', delay: 0.15 });
+    gsap.to('.cards-controls',{ filter: 'blur(0px)', opacity: 1, duration: 1,   ease: 'power2.out', delay: 0.3 });
+    gsap.to('.site-footer',   { filter: 'blur(0px)', opacity: 1, duration: 1.5, ease: 'power2.out', delay: 0.4 });
+    animateCards();
 }
 
 // =============================================
@@ -260,6 +347,8 @@ document.addEventListener('click', e => {
 // Init
 // =============================================
 document.addEventListener('DOMContentLoaded', () => {
-    buildCards();
+    buildCards(getActiveDeck());
+    initDeckToggle();
     animateEntrance();
+    document.getElementById('random-card-btn').addEventListener('click', drawRandomCard);
 });
