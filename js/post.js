@@ -449,9 +449,13 @@ document.addEventListener('click', (e) => {
     });
 });
 
-// Handle back/forward cache (bfcache) - reset body visibility when navigating back
+// Handle back/forward cache (bfcache) - smooth transition when navigating back
 window.addEventListener('pageshow', (event) => {
-    gsap.set('body', { filter: 'blur(0px)', opacity: 1 });
+    // If we're coming back from a transition, body might be at opacity 0
+    gsap.fromTo('body', 
+        { filter: 'blur(12px)', opacity: 0 },
+        { filter: 'blur(0px)', opacity: 1, duration: 0.6, ease: 'power2.out' }
+    );
 });
 
 document.addEventListener('DOMContentLoaded', loadPost);
