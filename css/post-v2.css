@@ -1,0 +1,205 @@
+/* post-v2.css - Experimental 3-column Layout */
+
+:root {
+    --bg-color: #fcfaf8; /* warm off-white */
+    --text-color: #333333;
+    --text-light: #666666;
+    --accent-color: #d4a373; /* Example accent */
+    --border-color: #dddddd;
+    
+    --font-serif: 'Merriweather', serif;
+    --font-sans: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-serif);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: #999;
+}
+
+a:hover {
+    text-decoration-color: var(--text-color);
+    color: var(--text-color);
+}
+
+/* Header simple nav */
+.site-header {
+    padding: 2rem 4rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+}
+.site-header a {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* The Grid Container */
+.experimental-layout {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 2rem 6rem;
+}
+
+/* Each block acts as a row in the overall flow */
+.content-block {
+    display: grid;
+    /* 
+       Left column: flexible. 
+       Center column: optimal reading width (max 50ch or so).
+       Right column: flexible for sidenotes.
+    */
+    grid-template-columns: 1fr minmax(auto, 50ch) 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: start;
+}
+
+/* Grid Children Placement */
+.content-block > .left-aside {
+    grid-column: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.content-block > .center-main {
+    grid-column: 2;
+    font-size: 1.1rem;
+}
+
+.content-block > .right-aside {
+    grid-column: 3;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--text-light);
+    border-left: 2px solid var(--border-color);
+    padding-left: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Full Width block */
+.content-block.full-width {
+    grid-template-columns: 1fr;
+}
+.content-block.full-width > .center-main {
+    grid-column: 1 / -1;
+    max-width: none;
+}
+.content-block.full-width img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional slight styling */
+    margin: 2rem 0;
+}
+
+/* Internal Center Main styles */
+.center-main p {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+.center-main ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.2rem;
+}
+.center-main li {
+    margin-bottom: 0.5rem;
+}
+.center-main strike, .center-main s {
+    color: #999;
+}
+
+/* Left Aside Img */
+.left-aside img {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+}
+
+/* Right Aside Lists */
+.right-aside p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.right-aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.right-aside li {
+    margin-bottom: 0.4rem;
+}
+.right-aside a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 0.2s;
+}
+.right-aside a:hover {
+    text-decoration-color: var(--text-light);
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+    .content-block {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .experimental-layout {
+        padding: 2rem;
+    }
+    .content-block {
+        grid-template-columns: 1fr 2fr; /* Left disappears or stacks? Let's keep 2 cols mostly */
+    }
+    .content-block > .left-aside {
+        display: none; /* or stack it */
+    }
+    .content-block > .right-aside {
+        grid-column: 2;
+        border-left: none;
+        padding-left: 0;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .experimental-layout {
+        padding: 1.5rem;
+    }
+    .content-block {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .content-block > .left-aside {
+        display: block;
+        grid-column: 1;
+        justify-content: flex-start;
+        margin-bottom: 1.5rem;
+    }
+    .content-block > .center-main {
+        grid-column: 1;
+    }
+    .content-block > .right-aside {
+        grid-column: 1;
+        border-left: 4px solid var(--border-color); /* Add left border back for quotation feel on mobile */
+        padding-left: 1rem;
+        margin-top: 0;
+    }
+}

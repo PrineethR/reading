@@ -169,15 +169,6 @@ if (themeToggle) {
     });
 }
 
-// =============================================
-// Custom cursor
-// =============================================
-const cursor = document.getElementById('cursor-follower');
-if (cursor) {
-    document.addEventListener('mousemove', e => {
-        gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.15, ease: 'power2.out' });
-    });
-}
 
 // =============================================
 // Build the card grid
@@ -235,12 +226,6 @@ function animateCards() {
         );
     });
 
-    if (cursor) {
-        document.querySelectorAll('a, button, .method-card').forEach(el => {
-            el.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 1.5, backgroundColor: 'rgba(212,175,55,0.2)', duration: 0.2 }));
-            el.addEventListener('mouseleave', () => gsap.to(cursor, { scale: 1, backgroundColor: 'transparent', duration: 0.2 }));
-        });
-    }
 }
 
 // =============================================
@@ -341,6 +326,11 @@ document.addEventListener('click', e => {
     if (link.getAttribute('target') === '_blank') return;
     e.preventDefault();
     gsap.to('body', { filter: 'blur(12px)', opacity: 0, duration: 0.4, ease: 'power2.inOut', onComplete: () => { window.location.href = href; } });
+});
+
+// Handle back/forward cache (bfcache) - reset body visibility when navigating back
+window.addEventListener('pageshow', (event) => {
+    gsap.set('body', { filter: 'blur(0px)', opacity: 1 });
 });
 
 // =============================================

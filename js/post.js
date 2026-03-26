@@ -18,18 +18,6 @@ if (themeToggle) {
     });
 }
 
-// Custom Cursor config for post page
-const cursor = document.getElementById('cursor-follower');
-if (cursor) {
-    document.addEventListener('mousemove', (e) => {
-        gsap.to(cursor, {
-            x: e.clientX,
-            y: e.clientY,
-            duration: 0.15,
-            ease: "power2.out"
-        });
-    });
-}
 
 // Load markdown
 async function loadPost() {
@@ -427,16 +415,6 @@ async function loadPost() {
             });
         });
 
-        // Setup hover effects on newly created links
-        const hoverables = document.querySelectorAll('a, button');
-        hoverables.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                gsap.to(cursor, { scale: 1.5, backgroundColor: 'rgba(212, 175, 55, 0.2)', duration: 0.2 });
-            });
-            el.addEventListener('mouseleave', () => {
-                gsap.to(cursor, { scale: 1, backgroundColor: 'transparent', duration: 0.2 });
-            });
-        });
 
     } catch (e) {
         console.error(e);
@@ -469,6 +447,11 @@ document.addEventListener('click', (e) => {
         filter: 'blur(12px)', opacity: 0, duration: 0.4, ease: 'power2.inOut', 
         onComplete: () => { window.location.href = href; } 
     });
+});
+
+// Handle back/forward cache (bfcache) - reset body visibility when navigating back
+window.addEventListener('pageshow', (event) => {
+    gsap.set('body', { filter: 'blur(0px)', opacity: 1 });
 });
 
 document.addEventListener('DOMContentLoaded', loadPost);
